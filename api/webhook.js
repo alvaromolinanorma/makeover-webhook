@@ -190,8 +190,7 @@ async function notificarTelegram(motivo, nombre, fase, mensajeSugerido) {
     "",
     `💬 *Mensaje sugerido:*`,
     `_${mensajeSugerido || "—"}_`,
-  ].join("
-");
+  ].join("\n");
 
   try {
     await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
