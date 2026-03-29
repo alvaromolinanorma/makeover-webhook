@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+const { createClient } = require("@supabase/supabase-js");
 
 // Validar variables de entorno al arrancar — falla rápido y claro
 if (!process.env.ANTHROPIC_API_KEY) {
@@ -254,7 +254,7 @@ async function updateLead(leadId, updates) {
 }
 
 // ── MAIN HANDLER ──────────────────────────────────────────────────────────────
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // CORS — solo permitir orígenes conocidos
   const allowedOrigins = ["https://manychat.com", "https://app.manychat.com"];
   const origin = req.headers.origin || "";
